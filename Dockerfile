@@ -1,4 +1,5 @@
-FROM golang:1.10 as builder
+FROM golang:1.14.4-alpine3.12 as builder
+RUN apk add --no-cache bash gcc libc-dev make openssl-dev
 
 WORKDIR /go/src/github.com/jvassev/image2ipfs
 COPY . .
